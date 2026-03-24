@@ -14,11 +14,7 @@ No hints. Hack it. Don't give up if you get stuck, enumerate harder
 
 ```
 PORT   STATE SERVICE
-
-
 22/tcp open  ssh
-
-
 80/tcp open  http
 ```
 
@@ -36,11 +32,8 @@ PORT   STATE SERVICE
 
 ```
 80/tcp open  http    syn-ack ttl 62 Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-
 |_http-title: Mindgames.
-
 | http-methods: 
-
 |_  Supported Methods: GET HEAD POST OPTIONS
 ```
 
@@ -118,11 +111,7 @@ thm{******38247ff441ce4e13**********}
 
 ```
 /usr/bin/mtr-packet = cap_net_raw+ep
-
-
 /usr/bin/openssl = cap_setuid+ep
-
-
 /home/mindgames/webserver/server = cap_net_bind_service+ep
 ```
 
