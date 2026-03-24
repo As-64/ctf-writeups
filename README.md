@@ -9,6 +9,7 @@ Common room types that we use:
 - LPE (Local Privilege Escalation)
 - Network (Exploiting network services/services on a non-AD target machine)
 - AD (Exploiting an AD based machine)
+
 Some rooms are hybrids of multiple types as they are complete CTF's
 
 | CTF                 | OS Type           | Room Type            | Difficulty          | Description      |
