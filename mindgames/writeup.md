@@ -137,7 +137,7 @@ thm{******38247ff441ce4e13**********}
 
 `nano exploit.c`
 
-`
+```
 #include <openssl/engine.h>
 
 
@@ -158,7 +158,7 @@ static int bind(ENGINE *e, const char *id) {
 IMPLEMENT_DYNAMIC_BIND_FN(bind)
 
 IMPLEMENT_DYNAMIC_CHECK_FN()"
-`
+```
 
 
 + Once we have done that we install dependencies on our attacking machine
