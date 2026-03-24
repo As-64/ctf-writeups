@@ -156,7 +156,7 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 `gcc -shared -o exploit.so -lcrypto exploit.o`
 
 
-# we transfer the exploit to the target machine so we can execute the binary
+# We transfer the exploit to the target machine so we can execute the binary
 
 + start up a python server on your attacker machine
 
