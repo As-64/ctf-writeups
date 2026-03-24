@@ -11,6 +11,6 @@ Common room types that we use:
 - AD (Exploiting an AD based machine)
 Some rooms are hybrids of multiple types as they are complete CTF's
 
-| CTF        | OS Typ   | Room Type   | Difficulty |
-|------------|----------|-------------|------------|
-| Mindgames  | Linux    | Web App/LPE | Medium     |
+| CTF             | OS Type       | Room Type        | Difficulty      |
+|-----------------|---------------|------------------|-----------------|
+| Mindgames       | Linux         | Web App/LPE      | Medium          |
