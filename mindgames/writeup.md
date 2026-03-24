@@ -51,11 +51,8 @@ PORT   STATE SERVICE
 
 ```
 <form id="codeForm">
-
         <textarea id="code" placeholder="Enter your code here..."></textarea><br>
-        
         <button>Run it!</button>
-        
 </form>
 ```
 
