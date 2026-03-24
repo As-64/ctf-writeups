@@ -1,6 +1,16 @@
 # TryHackMe Walkthroughs & Writeups
+-----------------------------------
+We have created here a collection of tryhackme writeups for all levels of hacking - from a range of easy to medium rated tryhackme labs
+Each room walkthrough features full writeup on methodology, reconnaissance/enumeration, commands executed, and bleeped flags 
+Below you can see which CTF's we have currently written up - we hope to cover as many as possible in the end
 
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Row 1 A  | Row 1 B  | Row 1 C  |
-| Row 2 A  | Row 2 B  | Row 2 C  |
+Common room types that we use:
+- Web App (Exploiting a web application)
+- LPE (Local Privilege Escalation)
+- Network (Exploiting network services/services on a non-AD target machine)
+- AD (Exploiting an AD based machine)
+Some rooms are hybrids of multiple types as they are complete CTF's
+
+| CTF        | OS Typ   | Room Type   | Difficulty |
+|------------|----------|-------------|------------|
+| Mindgames  | Linux    | Web App/LPE | Medium     |
