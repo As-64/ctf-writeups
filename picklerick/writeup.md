@@ -13,7 +13,8 @@ If you want a video guided walkthrough of this CTF please visit @capricorncybers
 *** In this challenge the IP address I am using is 10.146.141.128 - please change it to suit the machine that you are using
 
 # Basic service exploration against the target
-```nmap 10.146.141.128 --top-ports 10000 -T5 -oN top10000.txt
+```
+nmap 10.146.141.128 --top-ports 10000 -T5 -oN top10000.txt
 
 Host is up (0.17s latency).
 Not shown: 8375 closed tcp ports (reset)
@@ -27,7 +28,8 @@ PORT   STATE SERVICE
 # Busting directories using gobuster
 + We know that the target is running an http web server so lets see if we can discover any directories using gobuster
 
-```gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x php,txt -t 85
+```
+gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x php,txt -t 85
 
 /.htpasswd.php        (Status: 403) [Size: 279]
 /.htpasswd.txt        (Status: 403) [Size: 279]
