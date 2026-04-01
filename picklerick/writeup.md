@@ -46,7 +46,8 @@ gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x ph
 /server-status        (Status: 403) [Size: 279]
 ```
 
-+ Let's have a quick look at what is in the source code of the main web page and for comments in particular
+
+Let's have a quick look at what is in the source code of the main web page and for comments in particular. I'm going to use curl here to do this but you can visit the web page in person if you choose, just for me curl makes it easier
 
 
 ```
@@ -54,7 +55,7 @@ curl http://10.146.141.128
 ```
 
 
-+ we can see the result is that we have a little note which contains a username we can use
+We can see the result is that we have a little note which contains a username we can use once we try and login. Maybe we will find a password to be for now lets keep enumerating the website for anything more of interest to us
 
 
 ```
@@ -63,7 +64,7 @@ Note to self, remember username!
 Username: R1ckRul3s
 ```
 
-+ I'm also gonna check robots.txt for anything as classicly web paths for the search engine to see are there
+I'm also gonna check robots.txt for anything as classicly web paths for the search engine to see are there. I'm going to use curl for this as it makes it easier to examine the results but feel free to browse it in your browser
 
 
 ```
