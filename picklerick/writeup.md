@@ -57,9 +57,12 @@ curl http://10.146.141.128
 + we can see the result is that we have a little note which contains a username we can use
 
 
+```
 Note to self, remember username!
 
 Username: R1ckRul3s
+```
+
 
 ```
 curl http://10.146.141.128/robots.txt
