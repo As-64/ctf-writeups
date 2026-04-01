@@ -48,9 +48,11 @@ gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x ph
 
 + Let's have a quick look at what is in the source code of the main web page and for comments in particular
 
+
 ```
 curl http://10.146.141.128
 ```
+
 
 + we can see the result is that we have a little note which contains a username we can use
 
@@ -62,6 +64,7 @@ Username: R1ckRul3s
 ```
 curl http://10.146.141.128/robots.txt
 ```
+
 
 + we have obtained another item - this one looks like a password
 
