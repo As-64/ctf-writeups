@@ -15,3 +15,4 @@ Some rooms are hybrids of multiple types as they are complete CTF's
 | CTF                 | OS Type           | Room Type            | Difficulty          | Description      |
 |---------------------|-------------------|----------------------|---------------------|------------------|
 | [Mindgames](./mindgames/writeup.md)| Linux             | Web App/LPE          | Medium              | No hints. Hack it. Don't give up if you get stuck, enumerate harder |
+[ [Picklerick](./picklerick/writeup.md) | Linux           | Web App/LPE           | Very Easy           | A Rick and Morty CTF. Help turn Rick back into a human!             |
