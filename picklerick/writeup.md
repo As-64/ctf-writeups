@@ -79,3 +79,7 @@ Wubbalubbadubdub
 
 + I now move my attention over to 'login.php'
 <img width="1916" height="867" alt="image" src="https://github.com/user-attachments/assets/8578198b-c58d-44e0-8a60-9cc68118b4a0" />
+
++ Using the credentials we obtained I login
+<img width="1917" height="908" alt="image" src="https://github.com/user-attachments/assets/19edc9b7-af46-4812-b072-e215c18d8433" />
+
