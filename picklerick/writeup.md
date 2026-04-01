@@ -26,7 +26,8 @@ PORT   STATE SERVICE
 + it is revealed to us ports 22 and 80 are open on the target machine - we can infer that http and ssh are running
 
 # Basic website enumeration
-+ We know that the target is running an http web server so lets see if we can discover any directories using gobuster
+We know that the target is running an http web server so lets see if we can discover any directories using gobuster
+
 
 ```
 gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x php,txt -t 85
@@ -72,13 +73,14 @@ curl http://10.146.141.128/robots.txt
 ```
 
 
-+ we have obtained another item - this one looks like a password
+We have obtained another item - this one looks like a password. This means we now have a full credential set that can be used at the path 'login.php' which we discovered using gobuster in the earlier stage of our enumeration
 
 ```
 Wubbalubbadubdub
 ```
 
-+ I now move my attention over to 'login.php'
+
+I now move my attention over to 'login.php' since we now have a full credential set 
 <img width="1916" height="867" alt="image" src="https://github.com/user-attachments/assets/8578198b-c58d-44e0-8a60-9cc68118b4a0" />
 
 + Using the credentials we obtained I login
