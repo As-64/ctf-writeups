@@ -63,6 +63,8 @@ Note to self, remember username!
 Username: R1ckRul3s
 ```
 
++ I'm also gonna check robots.txt for anything as classicly web paths for the search engine to see are there
+
 
 ```
 curl http://10.146.141.128/robots.txt
