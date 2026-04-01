@@ -10,7 +10,7 @@ If you want a video guided walkthrough of this CTF please visit @capricorncybers
 
 
 ## 🛠️ Approach
-*** In this challenge the IP address I am using is 10.146.141.128 - please change it to suit the machine that you are using
+*** In this challenge the IP address I am using is 10.146.141.128 - please change it to suit the machine that you are using ***
 
 # Basic service exploration against the target
 ```
@@ -98,4 +98,13 @@ We can see that we have our first ingredient. But we can't execute the cat comma
 <img width="1906" height="891" alt="image" src="https://github.com/user-attachments/assets/4690c2a4-353c-404c-8aa7-138b84ff0899" />
 
 
-Now that we have the first ingredient lets keep going and see what we can do next. After exploring the system, I find that we have a user called rick which has its home directory in **/home/rick
+Now that we have the first ingredient lets keep going and see what we can do next. After exploring the system a little further, I find that we have a user called rick which has its home directory in /home/rick. Lets see what is in Rick's home directory using another ls command.
+
+
+<img width="1868" height="850" alt="image" src="https://github.com/user-attachments/assets/a37f358e-e455-4348-8f60-25b4d03ebfd9" />
+
+
+We can see that in this directory we have the second ingredients! I'm going to use the less command once again to extract the second ingredient
+
+
+<img width="1860" height="846" alt="image" src="https://github.com/user-attachments/assets/4f41da1b-0d16-40b2-8cbe-87bf154f0be7" />
