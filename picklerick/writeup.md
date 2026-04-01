@@ -85,7 +85,7 @@ I now move my attention over to 'login.php' since we now have a full credential 
 
 <img width="1916" height="867" alt="image" src="https://github.com/user-attachments/assets/8578198b-c58d-44e0-8a60-9cc68118b4a0" />
 
-
+# Web exploitation
 Using the credentials we obtained I login to the website and I find that we have a command execution panel. A very easy example of command execution, but I suppose this is just a beginner level ctf so it makes sense. A great ctf to get a first touch of command execution. Here I am going to execute the ls command and see what files we have in the current working directory on the system
 
 
