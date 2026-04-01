@@ -98,4 +98,4 @@ We can see that we have our first ingredient. But we can't execute the cat comma
 <img width="1906" height="891" alt="image" src="https://github.com/user-attachments/assets/4690c2a4-353c-404c-8aa7-138b84ff0899" />
 
 
-Now that we have the first ingredient lets keep going and see what we can do next. After exploring the system, I find that we have a user called rick which has its home directory in ***/home/rick
+Now that we have the first ingredient lets keep going and see what we can do next. After exploring the system, I find that we have a user called rick which has its home directory in **/home/rick
