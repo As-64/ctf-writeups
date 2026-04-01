@@ -25,7 +25,7 @@ PORT   STATE SERVICE
 
 + it is revealed to us ports 22 and 80 are open on the target machine - we can infer that http and ssh are running
 
-# Busting directories using gobuster
+# Basic website enumeration
 + We know that the target is running an http web server so lets see if we can discover any directories using gobuster
 
 ```
@@ -44,3 +44,13 @@ gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x ph
 /robots.txt           (Status: 200) [Size: 17]
 /robots.txt           (Status: 200) [Size: 17]
 /server-status        (Status: 403) [Size: 279]```
+
++ Let's have a quick look at what is in the source code of the main web page and for comments in particular
+
+`curl http://10.146.141.128`
+
+```
+Note to self, remember username!
+
+Username: R1ckRul3s
+```
