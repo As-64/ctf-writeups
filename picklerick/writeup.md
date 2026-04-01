@@ -90,3 +90,11 @@ Using the credentials we obtained I login to the website and I find that we have
 
 
 <img width="1911" height="900" alt="image" src="https://github.com/user-attachments/assets/30f24425-1d3c-48d3-90a8-895ef6be337b" />
+
+
+We can see that we have our first ingredient. But we can't execute the cat command! We can get round this by executing the 'less' command which more or less does the same job slightly different but isn't filtered by the WAF.
+
+
+<img width="1906" height="891" alt="image" src="https://github.com/user-attachments/assets/4690c2a4-353c-404c-8aa7-138b84ff0899" />
+
+
