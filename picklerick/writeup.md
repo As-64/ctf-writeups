@@ -43,14 +43,15 @@ gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x ph
 /portal.php           (Status: 302) [Size: 0] [--> /login.php]
 /robots.txt           (Status: 200) [Size: 17]
 /robots.txt           (Status: 200) [Size: 17]
-/server-status        (Status: 403) [Size: 279]```
+/server-status        (Status: 403) [Size: 279]
+```
 
 + Let's have a quick look at what is in the source code of the main web page and for comments in particular
 
 `curl http://10.146.141.128`
 
-```
+
 Note to self, remember username!
 
 Username: R1ckRul3s
-```
+
