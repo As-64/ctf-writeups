@@ -48,10 +48,26 @@ gobuster dir -u http://10.146.141.128 -w /usr/share/wordlists/dirb/big.txt -x ph
 
 + Let's have a quick look at what is in the source code of the main web page and for comments in particular
 
-`curl http://10.146.141.128`
+```
+curl http://10.146.141.128
+```
+
++ we can see the result is that we have a little note which contains a username we can use
 
 
 Note to self, remember username!
 
 Username: R1ckRul3s
 
+```
+curl http://10.146.141.128/robots.txt
+```
+
++ we have obtained another item - this one looks like a password
+
+
+Wubbalubbadubdub
+
+
++ I now move my attention over to 'login.php'
+<img width="1916" height="867" alt="image" src="https://github.com/user-attachments/assets/8578198b-c58d-44e0-8a60-9cc68118b4a0" />
