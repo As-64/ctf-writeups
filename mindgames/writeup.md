@@ -1,4 +1,4 @@
-# Mindgames CTF TryHackme Fulle Walkthrough
+# Mindgames CTF TryHackme Full Walkthrough
 
 
 ## 🧩 Challenge Description
